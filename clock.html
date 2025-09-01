@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glitch Clock</title>
+<style>body{background:black;color:#0ff;font-family:monospace;text-align:center;padding:20px;font-size:3rem;}</style>
+</head>
+<body>
+<h1>Glitch Clock</h1>
+<div id="clock"></div>
+<script>
+function update(){document.getElementById('clock').innerText=new Date().toLocaleTimeString();}
+setInterval(update,500);
+update();
+</script>
+</body>
+</html>

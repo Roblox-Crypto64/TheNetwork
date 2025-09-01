@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cipher Machine</title>
+<style>body{background:black;color:#0ff;font-family:monospace;text-align:center;padding:20px;}textarea,input,button{margin:5px;font-size:1.2rem;}</style>
+</head>
+<body>
+<h1>Cipher Machine</h1>
+<textarea id="input" placeholder="Text"></textarea><br>
+<select id="type"><option value="caesar">Caesar +3</option><option value="base64">Base64</option></select><br>
+<button id="encode">Encode</button>
+<button id="decode">Decode</button>
+<div id="output"></div>
+<script>
+function caesar(str,shift){return str.split('').map(c=>String.fromCharCode(c.charCodeAt(0)+shift)).join('');}
+document.getElementById('encode').onclick=()=>{const t=document.getElementById('input').value;const type=document.getElementById('type').value;if(type==='caesar'){document.getElementById('output').innerText=caesar(t,3);}else{document.getElementById('output').innerText=btoa(t);}};
+document.getElementById('decode').onclick=()=>{const t=document.getElementById('input').value;const type=document.getElementById('type').value;if(type==='caesar'){document.getElementById('output').innerText=caesar(t,-3);}else{document.getElementById('output').innerText=atob(t);}};
+</script>
+</body>
+</html>

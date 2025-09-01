@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stopwatch</title>
+<style>body{background:black;color:#0ff;font-family:monospace;text-align:center;padding:20px;}button{font-size:1.2rem;margin:5px;}</style>
+</head>
+<body>
+<h1>Stopwatch</h1>
+<div id="display">0</div>
+<button id="start">Start</button><button id="stop">Stop</button><button id="reset">Reset</button>
+<script>
+let time=0,interval;
+document.getElementById('start').onclick=()=>{clearInterval(interval);interval=setInterval(()=>{time++;document.getElementById('display').innerText=time;},1000);};
+document.getElementById('stop').onclick=()=>{clearInterval(interval);};
+document.getElementById('reset').onclick=()=>{clearInterval(interval);time=0;document.getElementById('display').innerText=0;};
+</script>
+</body>
+</html>

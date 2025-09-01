@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dice Roller</title>
+<style>body{background:black;color:#0ff;font-family:monospace;text-align:center;padding:20px;}button{font-size:1.5rem;margin:10px;}</style>
+</head>
+<body>
+<h1>Dice Roller</h1>
+<button id="roll">Roll Dice</button>
+<div id="output" style="font-size:2rem;margin-top:10px;"></div>
+<script>
+document.getElementById('roll').onclick=()=>{document.getElementById('output').innerText=Math.floor(Math.random()*6)+1;};
+</script>
+</body>
+</html>

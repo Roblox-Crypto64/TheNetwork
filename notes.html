@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NotesPad</title>
+<style>
+body { background:black; color:#00ffea; font-family: monospace; padding:20px; }
+textarea { width:100%; height:80vh; background:#000; color:#0ff; border:2px solid #0ff; font-size:1.2rem; }
+</style>
+</head>
+<body>
+<h1>NotesPad</h1>
+<textarea id="notes"></textarea>
+<script>
+const textarea = document.getElementById('notes');
+textarea.value = localStorage.getItem('notes')||'';
+textarea.addEventListener('input',()=>{localStorage.setItem('notes',textarea.value);});
+</script>
+</body>
+</html>
