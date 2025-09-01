@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Network - Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100%;
+      background: black;
+      color: #00ffea;
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: auto;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .glitch {
+      font-size: 3rem;
+      position: relative;
+      animation: flicker 2s infinite alternate;
+      margin-bottom: 20px;
+    }
+
+    .glitch::before, .glitch::after {
+      content: "The Network";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ff00ff;
+      background: black;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    .glitch::before {
+      animation: glitchTop 2s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      color: #00ffff;
+      animation: glitchBottom 1.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      20% { clip: rect(0, 9999px, 20px, 0); }
+      40% { clip: rect(0, 9999px, 0, 0); }
+      60% { clip: rect(0, 9999px, 15px, 0); }
+      80% { clip: rect(0, 9999px, 5px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(80px, 9999px, 100px, 0); }
+      20% { clip: rect(40px, 9999px, 60px, 0); }
+      40% { clip: rect(70px, 9999px, 90px, 0); }
+      60% { clip: rect(10px, 9999px, 30px, 0); }
+      80% { clip: rect(50px, 9999px, 70px, 0); }
+      100% { clip: rect(20px, 9999px, 40px, 0); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+      70% { opacity: 0.6; }
+    }
+
+    .message {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 15px;
+      animation: flicker 3s infinite alternate;
+    }
+
+    .highlight { color: #ffaa00; } /* for emphasis or emojis */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="glitch">The Network</div>
+    <div class="message">
+      <p>Welcome to <span class="highlight">The Network! 🌐✨</span></p>
+      <p>You’re currently reading this on <span class="highlight">Rec2</span>, the hub for everything cool and tiny in the digital world! The Network is a website packed with small apps designed to make life easier, more fun, and a little bit hacker-ish 😉.</p>
+      <p>From mini games to useful tools, creative utilities, and quirky experiments, everything here is bite-sized but powerful.</p>
+      <p>Think of it as your pocket playground for the web—click, explore, and discover new tools every day. Whether you’re here to tinker, experiment, or just have fun, The Network has something for everyone. And the best part? You don’t need anything fancy—just a browser and your curiosity! 🚀</p>
+      <p>So dive in, try out the apps, and see what tiny wonders you can unlock today. Who knows? You might even find your new favorite tool hiding in plain sight! 🛠️💡</p>
+      <p><span class="highlight">REC2</span> is an unofficial app on The Network about the Network to look like the home screen.</p>
+    </div>
+  </div>
+</body>
+</html>
