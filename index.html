@@ -91,8 +91,8 @@
   <div class="container" id="app"></div>
 
   <script>
-    // --- TOGGLE: set this to "true", "false", or "error" ---
-    const networkStatus = "true";
+    // --- TOGGLE: set this to "true", "false", "error", or "about" ---
+    const networkStatus = "about";
     // ------------------------------------------------------
 
     const app = document.getElementById("app");
@@ -102,7 +102,6 @@
         <div class="glitch">The Network</div>
         <div class="message update">⏳ Initializing... Please wait</div>
       `;
-      // redirect after 10 seconds
       setTimeout(() => {
         window.location.href = "landing.html";
       }, 10000);
@@ -116,6 +115,15 @@
         <div class="glitch">The Network</div>
         <div class="message error">❌ An Unexpected Development Error Occurred.</div>
       `;
+    } else if (networkStatus === "about") {
+      app.innerHTML = `
+        <div class="glitch">The Network</div>
+        <div class="message error">😔 Sorry, The Network Unavailable.</div>
+      `;
+      // redirect after 5 seconds
+      setTimeout(() => {
+        window.location.href = "rec2.html";
+      }, 5000);
     } else {
       app.innerHTML = `
         <div class="glitch">The Network</div>
